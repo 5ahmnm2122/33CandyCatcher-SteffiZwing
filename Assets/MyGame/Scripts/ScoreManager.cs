@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
 	public TextMeshProUGUI pointsText;
+    public Text pointTxt;
     public MyScore myScore;
     public static int localScore;
     public Text endPointsText;
@@ -15,11 +16,13 @@ public class ScoreManager : MonoBehaviour
     {
         localScore = 0;
         pointsText.text = localScore.ToString();
+        pointTxt.text = localScore.ToString();
     }
 
     private void Update()
     {
         pointsText.text = localScore.ToString();
+        pointTxt.text = "Punkte: " +localScore.ToString();
     }
     
     public void SaveScore()

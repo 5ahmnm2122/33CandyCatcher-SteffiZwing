@@ -6,8 +6,11 @@ public class GameManager : MonoBehaviour {
 
     private InputField userName;
     private TextMeshProUGUI tmpName;
+    public Text nameTxt;
+    public Text pointsTxt;
 
     public NameData nameData;
+    public MyScore scoreData;
     
     private void Start()
     {
@@ -27,8 +30,11 @@ public class GameManager : MonoBehaviour {
         if(tmpName == null)
         {
             tmpName = GameObject.Find("SavedNameTmp").GetComponent<TextMeshProUGUI>();
+
         }
 
+        pointsTxt.text = scoreData.score.ToString();
         tmpName.text = nameData.yourName;
+        nameTxt.text = nameData.yourName;
     }
 }
